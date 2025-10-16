@@ -209,7 +209,7 @@ emailError.style.display = 'none'
 email.appendChild(emailError)
 
 function validateEmail() {
-	const emailValue = email.emailInput.value.trim()
+	const emailValue = emailInput.value.trim()
 	const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 	if (!emailReg.test(emailValue)) {
@@ -217,7 +217,7 @@ function validateEmail() {
 		emailError.textContent = 'Invalid email address'
 		emailError.style.display = 'block'
 	} else {
-		emailInput.style.border = 'none'
+		emailInput.style.border = '1px solid #ccc'
 		emailError.textContent = ''
 		emailError.style.display = 'none'
 	}
