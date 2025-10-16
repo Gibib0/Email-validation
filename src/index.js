@@ -12,6 +12,7 @@ description.className = 'description'
 
 const form = document.createElement('form')
 form.className = 'signup-form'
+form.noValidate = true
 
 const nameRow = document.createElement('div')
 nameRow.className = 'form-row'
