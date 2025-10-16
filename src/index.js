@@ -197,3 +197,29 @@ cancelBtn.addEventListener('click', () => {
 		form.reset()
 	}
 })
+
+
+const emailError = document.createElement('div')
+emailError.style.color = 'red'
+emailError.style.marginTop = '5px'
+emailError.style.fontSize = '13px'
+emailError.style.display = 'none'
+
+email.appendChild(emailError)
+
+function validateEmail() {
+	const emailValue = email.emailInput.value.trim()
+	const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+	if (!emailReg.test(emailValue)) {
+		emailInput.style.border = '3px solid red'
+		emailError.textContent = 'Invalid email address'
+		emailError.style.display = 'block'
+	} else {
+		emailInput.style.border = 'none'
+		emailError.textContent = ''
+		emailError.style.display = 'none'
+	}
+}
+
+emailInput.addEventListener('input', validateEmail)
